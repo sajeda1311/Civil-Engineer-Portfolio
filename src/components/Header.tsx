@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { BrandMark } from "@/components/BrandMark";
@@ -11,12 +12,15 @@ const navItems = [
   { label: "Services", href: "#services" },
   { label: "Codes", href: "#codes" },
   { label: "Education", href: "#education" },
+  { label: "About", href: "/about", route: true as const },
   { label: "Contact", href: "#contact" },
 ];
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -25,8 +29,17 @@ export function Header() {
   }, []);
 
   const scrollTo = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
     setMobileOpen(false);
+    if (href.startsWith("/")) {
+      navigate(href);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    if (location.pathname !== "/") {
+      navigate("/" + href);
+      return;
+    }
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -39,7 +52,10 @@ export function Header() {
     >
       <div className="section-container flex items-center justify-between h-16">
         <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={() => {
+            if (location.pathname !== "/") navigate("/");
+            else window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           className="flex items-center hover:opacity-90 transition-opacity"
           aria-label="Shahid Patel — home"
         >

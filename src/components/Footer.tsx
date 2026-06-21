@@ -2,10 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Mail, Linkedin, MapPin } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
-export function Footer() {
+export function Footer({ hideCTA = false }: { hideCTA?: boolean } = {}) {
   return (
     <footer id="contact" className="relative overflow-hidden">
       {/* CTA Section */}
+      {!hideCTA && (
       <div className="section-padding bg-card relative">
         <div className="absolute inset-0 bg-grid opacity-10" />
         <div className="section-container text-center relative z-10">
@@ -30,6 +31,7 @@ export function Footer() {
           </ScrollReveal>
         </div>
       </div>
+      )}
 
       {/* Bottom bar */}
       <div className="bg-background border-t border-border/50">
