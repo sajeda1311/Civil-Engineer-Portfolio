@@ -46,7 +46,7 @@ export function Footer({ hideCTA = false }: { hideCTA?: boolean } = {}) {
                 shahidp017@gmail.com
               </a>
               <a
-                href="https://linkedin.com/in/shahid-patel"
+                href="https://linkedin.com/in/shahid-h-patel"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
