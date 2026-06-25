@@ -139,7 +139,7 @@ function Hero() {
             <span className="text-primary italic font-medium">Engineering.</span>
           </h1>
           <p className="mt-8 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Curiosity has always been at the center of everything I do — from building structures
+            Curiosity has always been at the center of everything I do, from building structures
             to exploring new places, learning new skills, and discovering new perspectives.
           </p>
         </div>
@@ -499,7 +499,7 @@ function Closing() {
             </p>
             <p>
               Whether I’m working on a project, sketching a portrait, travelling somewhere new,
-              learning guitar, hiking a trail, or watching the ocean from a coastline — I’m
+              learning guitar, hiking a trail, or watching the ocean from a coastline, I’m
               always looking for opportunities to learn, grow, and appreciate the world around me.
             </p>
           </div>

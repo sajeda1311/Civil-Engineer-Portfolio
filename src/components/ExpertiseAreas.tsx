@@ -7,7 +7,7 @@ const areas = [
     icon: Building2,
     title: "Civil Engineering Systems",
     description:
-      "Planning, design, and delivery of civil infrastructure — from site investigation through construction closeout.",
+      "Planning, design, and delivery of civil infrastructure, from site investigation through construction closeout.",
     bullets: [
       "Site investigation & geotechnical assessment",
       "Foundation design (shallow, deep, mat)",
